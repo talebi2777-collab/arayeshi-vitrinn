@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: arayeshi_vitrin
+    ports:
+      - "5432:5432"
+    volumes:
+      - vitrin_pg:/var/lib/postgresql/data
+volumes:
+  vitrin_pg:
